@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button } from 'react-bootstrap'
+import { Alert, Button } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import useAlbum from '../../hooks/useAlbum'
 import { db } from '../../firebase/index'
@@ -51,12 +51,19 @@ const CreateAlbumWithPhotos = (props) => {
 
   return (
     <div>
-      {newAlbumId && <p>id of new album</p>}
+      {newAlbumId && (
+        <Alert
+          title='test'
+          variant='danger'
+          className='alert-danger h2 text-lg-center'>
+          You can now close the page!
+        </Alert>
+      )}
       <Button
         id='submit'
-        variant='secondary'
+        variant='info'
         block
-        className='btn-block'
+        className='btn-block m-2 font-weight-bold'
         onClick={createNewHandel}>
         send liked photos back to photographer
       </Button>
@@ -65,25 +72,3 @@ const CreateAlbumWithPhotos = (props) => {
 }
 
 export default CreateAlbumWithPhotos
-
-// const createAlbum = () => {
-//   const unsubscribe = db
-//     .collection('albums')
-//     .add({
-//       title: `${album.title} made by customer at: ${date}`,
-//       owner: album.owner,
-//     })
-//     .then((docRef) => {
-//       const id = docRef.id
-//       setNewAlbumId(docRef)
-
-//       console.log(docRef.id)
-
-//       console.log(id)
-//       console.log(newAlbumId[0])
-//     })
-//     .catch(function (error) {
-//       console.error('Error adding document: ', error)
-//     })
-//   return unsubscribe
-// }
