@@ -22,6 +22,7 @@
     "simple-react-lightbox": "^3.6.3",
     "web-vitals": "^1.1.0"
   },
+  "homepage": "https://photo-review-app-v3-self-build.netlify.app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
