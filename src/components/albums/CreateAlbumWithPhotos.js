@@ -64,6 +64,7 @@ const CreateAlbumWithPhotos = (props) => {
         variant='info'
         block
         className='btn-block m-2 font-weight-bold'
+        disabled={selected.length <= 0}
         onClick={createNewHandel}>
         send liked photos back to photographer
       </Button>
